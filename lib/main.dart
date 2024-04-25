@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_online/features/feature_intro/presentation/bloc/splash_cubit/splash_cubit.dart';
+import 'package:shop_online/features/feature_intro/presentation/screens/intro_screen.dart';
 import 'package:shop_online/features/feature_intro/presentation/screens/splash_screen.dart';
 
 void main() {
@@ -18,7 +19,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      initialRoute: "/",
+      routes: {
+        IntroScreen.routeName: (context) => const IntroScreen(),
+      },
       debugShowCheckedModeBanner: false,
       title: 'Shop Online',
       home: SplashScreen(),
